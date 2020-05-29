@@ -1,0 +1,23 @@
+.nav-left li a svg {
+    fill: white;
+    width: 80%;
+    transition: 0.4s;
+}
+
+.nav-left li a.active svg,
+.nav-left li a:hover svg {
+    fill: #00FFFF;
+}
+
+.btn-no-effects:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-user .icon-user {
+    background-color: gray;
+}
+
+.dropdown-user:focus .icon-user {
+    background-color: #2A2A5F;
+}
