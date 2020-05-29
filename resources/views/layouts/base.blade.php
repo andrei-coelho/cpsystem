@@ -19,7 +19,7 @@
     @auth
         <div class="container-fluid">
             <div class="row p-0">
-                <div class="col-1 bg-primary h-100 position-fixed">
+                <div class="col-1 bg-primary h-100 position-fixed" style="z-index: 9999999;">
                     @include('layouts.leftmenu')
                 </div>
                 <div class="col-1"></div>

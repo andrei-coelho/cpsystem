@@ -11,25 +11,22 @@
 |
 */
 
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function ()    {
-        return view('pages.home');
+        return view('pages.home', ['pag' => 'home']);
     });
 
-    Route::get('user/profile', function () {
-        // Uses Auth Middleware
-    });
+    // inclui todas as rotas internas do pacote App\Routes
+    foreach ([
+        "emails", "contatos"
+    ] as $file)
+    ("App\\Routes\\".ucfirst($file."Route"))::routes();
 
 });
-
-
 
 /**
  * retirar as rotas do auth e coloca-las manualmente
 */
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-

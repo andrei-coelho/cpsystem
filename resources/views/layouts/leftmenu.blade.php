@@ -1,6 +1,6 @@
 <ul class="nav flex-column nav-left">
   <li class="nav-item">
-    <a class="nav-link active" href="/">
+    <a class="nav-link @if($pag == 'home') {{ 'active' }} @endif" href="/">
         <svg class="mx-auto d-block" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 211.66 211.66"
         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -11,7 +11,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/emails">
+    <a class="nav-link @if($pag == 'emails') {{ 'active' }} @endif" href="/emails">
         <svg class="mx-auto d-block" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 211.66 211.66"
         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,7 +22,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/contatos">
+    <a class="nav-link @if($pag == 'contatos') {{ 'active' }} @endif" href="/contatos">
         <svg class="mx-auto d-block" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 211.66 211.66"
         xmlns:xlink="http://www.w3.org/1999/xlink">
