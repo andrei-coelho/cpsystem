@@ -1,15 +1,15 @@
-<div class="container-fluid">
+<div class="container-fluid position-fixed" style="z-index: 9999999;">
 
     <div class="row p-0">
 
         <div class="col-1 bg-secondary">
             <img src="/img/logo-simple-icon.svg" class="mx-auto d-block" style="height: 75px;" alt="">
         </div>
-        <div class="col-9 bg-white border-bottom">
+        <div class="col-8 bg-white border-bottom pt-3">
             @yield('header-page')
         </div>
-        <div class="col-2 bg-white border-bottom">
-            <div class="dropdown">
+        <div class="col-3 bg-white border-bottom">
+            <div class="dropdown float-right">
                 <button class="dropdown-user btn btn-white p-0 px-3 btn-no-effects" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    <ul class="nav">
                         <li class="nav-item">
@@ -40,5 +40,8 @@
 
         </div>
     </div>
+
+</div>
+<div class="container-fluid" style="height: 75px;">
 
 </div>

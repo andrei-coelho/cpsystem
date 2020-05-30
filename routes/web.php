@@ -14,14 +14,10 @@
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', function ()    {
-        return view('pages.home', ['pag' => 'home']);
-    });
+    Route::get('/', 'HomeController@index');
 
     // inclui todas as rotas internas do pacote App\Routes
-    foreach ([
-        "emails", "contatos"
-    ] as $file)
+    foreach (["emails", "contatos"] as $file)
     ("App\\Routes\\".ucfirst($file."Route"))::routes();
 
 });

@@ -21,8 +21,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+
+        $emailView = EmailsController::getLastInView();
+        $contatoView = ContatosController::getList(3);
+        return view('pages.home', ['pag' => 'home', 'emailView' =>  $emailView, 'contatoView' => $contatoView]);
+
     }
 }
