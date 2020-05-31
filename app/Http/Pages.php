@@ -3,5 +3,5 @@
 namespace App\Http;
 
 interface Pages {
-    function show($view);
+    public function show($view);
 }

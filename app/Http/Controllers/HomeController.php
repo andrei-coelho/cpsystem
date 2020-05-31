@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index() {
 
         $emailView = EmailsController::getLastInView();
-        $contatoView = ContatosController::getList(3);
+        $contatoView = ContatosController::getList(1, 3);
         return view('pages.home', ['pag' => 'home', 'emailView' =>  $emailView, 'contatoView' => $contatoView]);
 
     }

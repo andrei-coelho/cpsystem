@@ -2,7 +2,7 @@
 
 namespace App\Routes;
 
-class EmailsRoute {
+class EmailsRoute implements Route {
 
     public static function routes(){
         self::get();

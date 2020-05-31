@@ -1,17 +1,32 @@
 <?php
 
 namespace App\Services;
-use App\EmailService;
+use App\Services\Service as Service;
 
-class BenchMarke extends EmailService {
+class BenchMarke extends Service {
 
     const URL_BASE = "https://clientapi.benchmarkemail.com/";
 
-    public function getEstatisticaEmail($idEmailApi){
-        return $this->access("Emails/".$idEmailApi."/Report", "GET");
+    public function getEstatisticaEmail($idEmailApi):ResponseEmail{
+
+        $json = $this->access("Emails/".$idEmailApi."/Report", "GET");
+        $status = $json->Response->Status;
+
+        if($status != 1)
+        return new ResponseEmail(0,0,0,0,0,false);
+
+        $res = $json->Response->Data;
+        return new ResponseEmail(
+            $res->Sent,
+            $res->Opens,
+            $res->Bounces,
+            $res->UnOpens,
+            $res->Status
+        );
     }
 
     protected function access($url, $method){
+
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => $this::URL_BASE.$url,
