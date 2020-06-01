@@ -1,11 +1,16 @@
 @extends('layouts.base')
 @section('header-page')
-    <nav class="nav">
-    <a class="nav-link active" href="#">Active</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </nav>
+<nav class="nav">
+    <li class="nav-item py-2 px-3 mr-2 border-right">
+        <img src="/img/template-icon.svg"> Templates
+    </li>
+    <li class="nav-item mx-2">
+        <a class="btn btn-primary @if ($subpage == 'list') active @endif" href="#">Lista</a>
+    </li>
+    <li class="nav-item mx-2">
+        <a class="btn btn-primary @if ($subpage == 'new') active @endif" href="#">Novo Template</a>
+    </li>
+</nav>
 @endsection
 
 @section('content')

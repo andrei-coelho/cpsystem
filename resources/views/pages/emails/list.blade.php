@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    @if ($email->status)
+    @if ($email->responseApi->response)
     <div class="container-fluid">
         <div class="row p-3">
             <div class="col-5">
@@ -18,7 +18,7 @@
                     <li class="nav-item mx-2 text-center">
                         <div>
                             <div class="bg-primary rounded-circle icons-stat">
-                            {{ $email->enviados }}
+                            {{ $email->responseApi->enviados }}
                             </div> enviados
                         </div>
                     </li>
@@ -26,21 +26,21 @@
                     <li class="nav-item mx-2 text-center">
                         <div>
                             <div class="bg-success rounded-circle icons-stat">
-                            {{ $email->lidos }}
+                            {{ $email->responseApi->lidos }}
                             </div> lidos
                         </div>
                     </li>
                     <li class="nav-item mx-2 text-center">
                         <div>
                             <div class="bg-danger rounded-circle icons-stat">
-                            {{ $email->erros }}
+                            {{ $email->responseApi->erros }}
                             </div> erros
                         </div>
                     </li>
                     <li class="nav-item mx-2 text-center">
                         <div>
                             <div class="bg-gray rounded-circle icons-stat">
-                            {{ $email->nl }}
+                            {{ $email->responseApi->nl }}
                             </div> NL
                         </div>
                     </li>
@@ -74,7 +74,7 @@
             <div class="col-1">
                 <!-- Status -->
                 <small>Status:</small>
-                @if ($email->status == 2)
+                @if ($email->responseApi->status == 2)
                 <p class="text-success">Enviado</p>
                 @else
                 <p class="text-primary">Enviando...</p>

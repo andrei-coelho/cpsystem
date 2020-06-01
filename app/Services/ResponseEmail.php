@@ -6,15 +6,15 @@ use App\Config as Config;
 
 class ResponseEmail {
 
-    public $sent, $opens, $bounces, $unopens, $status, $response;
+    public $enviados, $lidos, $erros, $nl, $status, $response;
 
-    public function __construct(int $sent, int $opens, int $unopens, int $bounces, int $status, bool $responce = true){
-        $this->sent = $sent;
-        $this->opens = $opens;
-        $this->unopens = $unopens;
-        $this->bounces = $bounces;
+    public function __construct(int $enviados, int $lidos, int $nl, int $erros, int $status, bool $response = true){
+        $this->enviados = $enviados;
+        $this->lidos = $lidos;
+        $this->nl = $nl;
+        $this->erros = $erros;
         $this->status = $status;
-        $this->responce = $responce;
+        $this->response = $response;
     }
 
 

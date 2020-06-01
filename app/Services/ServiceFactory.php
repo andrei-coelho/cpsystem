@@ -12,7 +12,7 @@ class ServiceFactory {
         $conf = Config::get();
 
         switch($conf->empresa_service){
-            case "BenchMarke": return new BenchMarke($conf);
+            case "BenchMarke": return new BenchMarke();
         }
 
     }

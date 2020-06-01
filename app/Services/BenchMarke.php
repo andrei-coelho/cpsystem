@@ -7,12 +7,18 @@ class BenchMarke extends Service {
 
     const URL_BASE = "https://clientapi.benchmarkemail.com/";
 
+    protected $dicionario = [
+        "[nome]" => "[contact_attribute:firstname]",
+        "[sobrenome]" => "[contact_attribute:last name]",
+        "[email]" => "[contact_attribute:email]",
+        "[empresa]" => "[contact_attribute:company name]"
+    ];
+
     public function getEstatisticaEmail($idEmailApi):ResponseEmail{
 
         $json = $this->access("Emails/".$idEmailApi."/Report", "GET");
-        $status = $json->Response->Status;
 
-        if($status != 1)
+        if(!isset($json->Response->Status) || $json->Response->Status != 1)
         return new ResponseEmail(0,0,0,0,0,false);
 
         $res = $json->Response->Data;
